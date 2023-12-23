@@ -1,0 +1,22 @@
+
+.center-text {
+    text-align: center;
+}
+
+.root {
+    display: grid;
+}
+table {
+    place-items: center;
+}
+table {
+    border: 1px solid #333
+}
+
+td, th {
+    padding: 5px;
+    text-align: center;
+}
+td button {
+    
+}

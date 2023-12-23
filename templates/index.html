@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go tiny project with small backend</title>
+    <link rel="stylesheet" href="/static/style.css">
+
+</head>
+<body>
+    <div class="root">
+        <div class="fixed root">
+            <h1 class="center-text">Talent base</h1>
+            <table>
+                <thead>
+                    <tr >
+                        <th>Name</th>
+                        <th>Gender</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>jackson</td>
+                        <td>male</td>
+                        <td><button>delete</button></td>
+                    </tr>
+                    {{range .users}}
+                        <tr>
+                            <td>{{.Name}}</td>
+                            <td>{{.Male}}</td>
+                            <td><button>delete</button></td>
+                        </tr>
+                    {{end}}
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</body>
+</html>
