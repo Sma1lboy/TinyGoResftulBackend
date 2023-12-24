@@ -12,8 +12,25 @@
     removeHandler = (id) => {
         axios.get("http://localhost:8000/user/remove/" + id).then((res, err) => {
             console.log('delete success id: ' + id)
-            location.reload()
+            reload()
         })
+    }
+    addHandler = () => {
+        let name = document.getElementById("inputName");
+        let gender = document.getElementById("gender")
+        if(gender.innerHTML === 'male') gender = true;
+        console.log(name)
+        gender = false
+        user = {
+            "Name": name.value,
+            "Male" : gender
+        }
+        console.log(user)
+        axios.post("http://localhost:8000/user/add", user)
+        reload();
+    }
+    reload = () => {
+        location.reload()
     }
 </script>
 
@@ -41,10 +58,20 @@
                             <td><button onclick="removeHandler({{.ID}})">delete</button></td>
                         </tr>
                     {{end}}
+                    <tr><td></td></tr>
+                        <hr>
+                    <tr>
+                        
+                        <td><input id="inputName" type="text" style="width: fit-content;"/></td>
+                        <td><input type="text" id="gender"/></td>
+                        <td><button onclick="addHandler()">add</button></td>
+                        
+                    </tr>
                 </tbody>
             </table>
 
         </div>
     </div>
+
 </body>
 </html>

@@ -19,7 +19,7 @@ var users = []User{
 	{ID: 10, Name: "Sophia Martinez", Male: false},
 }
 
-var id = 4
+var id = users[len(users)-1].ID + 1
 
 func getAllUsers() []User {
 	return users
