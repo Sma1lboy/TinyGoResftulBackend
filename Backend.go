@@ -7,10 +7,18 @@ type User struct {
 }
 
 var users = []User{
-	{ID: 1, Name: "Blue Train", Male: true},
-	{ID: 2, Name: "Jeru", Male: false},
-	{ID: 3, Name: "Sarah Vaughan and Clifford Brown", Male: false},
+	{ID: 1, Name: "John Doe", Male: true},
+	{ID: 2, Name: "Jane Smith", Male: false},
+	{ID: 3, Name: "Bob Johnson", Male: true},
+	{ID: 4, Name: "Emily Brown", Male: false},
+	{ID: 5, Name: "Michael Wilson", Male: true},
+	{ID: 6, Name: "Samantha Davis", Male: false},
+	{ID: 7, Name: "William Lee", Male: true},
+	{ID: 8, Name: "Olivia Jones", Male: false},
+	{ID: 9, Name: "Daniel Garcia", Male: true},
+	{ID: 10, Name: "Sophia Martinez", Male: false},
 }
+
 var id = 4
 
 func getAllUsers() []User {

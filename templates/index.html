@@ -7,6 +7,16 @@
     <link rel="stylesheet" href="/static/style.css">
 
 </head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
+<script>
+    removeHandler = (id) => {
+        axios.get("http://localhost:8000/user/remove/" + id).then((res, err) => {
+            console.log('delete success id: ' + id)
+            location.reload()
+        })
+    }
+</script>
+
 <body>
     <div class="root">
         <div class="fixed root">
@@ -28,7 +38,7 @@
                         <tr>
                             <td>{{.Name}}</td>
                             <td>{{.Male}}</td>
-                            <td><button>delete</button></td>
+                            <td><button onclick="removeHandler({{.ID}})">delete</button></td>
                         </tr>
                     {{end}}
                 </tbody>

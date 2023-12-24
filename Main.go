@@ -53,10 +53,12 @@ func addUserHandler(c *gin.Context) {
 }
 
 func removeUserHandler(c *gin.Context) {
-	idStr := c.Query("id")
+	idStr := c.Param("id")
+	fmt.Println(idStr)
+	fmt.Println("asds")
 	id, _ := strconv.Atoi(idStr)
-	removeUser(id)
-	c.JSON(http.StatusOK, gin.H{})
+	user := removeUser(id)
+	c.JSON(http.StatusOK, user)
 }
 
 // func userUpdate(res http.ResponseWriter, req *http.Request) {
